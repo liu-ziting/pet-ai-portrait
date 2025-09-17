@@ -1,0 +1,41 @@
+{
+    "name": "pet-ai-portrait",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "test:ui": "vitest --ui",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "format": "prettier --write src/",
+        "convert-data": "node scripts/convert-readme-to-json.cjs"
+    },
+    "dependencies": {
+        "vue": "^3.4.0",
+        "vue-router": "^4.2.5",
+        "pinia": "^2.1.7"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@typescript-eslint/eslint-plugin": "^6.14.0",
+        "@typescript-eslint/parser": "^6.14.0",
+        "@vitejs/plugin-vue": "^4.5.2",
+        "@vue/eslint-config-prettier": "^8.0.0",
+        "@vue/eslint-config-typescript": "^12.0.0",
+        "@vue/test-utils": "^2.4.3",
+        "autoprefixer": "^10.4.16",
+        "eslint": "^8.55.0",
+        "eslint-plugin-vue": "^9.19.2",
+        "jsdom": "^23.0.1",
+        "postcss": "^8.4.32",
+        "prettier": "^3.1.1",
+        "tailwindcss": "^3.3.6",
+        "typescript": "^5.2.2",
+        "vite": "^5.0.8",
+        "vitest": "^1.0.4",
+        "vue-tsc": "^1.8.25"
+    }
+}
