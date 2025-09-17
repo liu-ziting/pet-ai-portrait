@@ -8,9 +8,8 @@
         <div>
           <h3 class="font-semibold text-gray-900 mb-4">关于项目</h3>
           <p class="text-gray-600 text-sm leading-relaxed">
-            精选的宠物AI肖像提示词合集，
-            帮助您轻松生成独特的宠物艺术作品，
-            让每个毛孩子都成为艺术品。
+            精选的AI宠物写真提示词合集，
+            帮助您轻松生成独特的宠物艺术作品。
           </p>
         </div>
 

@@ -31,11 +31,36 @@
 
         <!-- Content -->
         <div class="space-y-3">
-
             <!-- Prompt Preview -->
-            <p class="text-gray-600 text-sm line-clamp-3">
-                {{ prompt.prompt }}
-            </p>
+            <div class="relative">
+                <div class="prompt-container">
+                    <p 
+                        class="text-gray-600 text-sm transition-all duration-300 leading-relaxed"
+                        :class="isExpanded ? 'prompt-expanded' : 'prompt-collapsed'"
+                    >
+                        {{ prompt.prompt }}
+                    </p>
+                </div>
+                
+                <!-- Expand/Collapse Button -->
+                <div class="mt-2">
+                    <button
+                        @click="toggleExpanded"
+                        class="text-primary-600 hover:text-primary-700 text-xs font-medium flex items-center space-x-1 transition-colors hover:bg-primary-50 px-2 py-1 rounded"
+                    >
+                        <span>{{ isExpanded ? '收起' : '展开全部' }}</span>
+                        <svg 
+                            class="w-3 h-3 transition-transform duration-200"
+                            :class="{ 'rotate-180': isExpanded }"
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
 
             <!-- Copy Button -->
             <div class="pt-2">
@@ -76,9 +101,14 @@ const props = defineProps<Props>()
 
 const copied = ref(false)
 const showPreview = ref(false)
+const isExpanded = ref(false)
 
 const showImagePreview = () => {
     showPreview.value = true
+}
+
+const toggleExpanded = () => {
+    isExpanded.value = !isExpanded.value
 }
 
 const copyPrompt = async () => {
@@ -120,6 +150,22 @@ const handleImageError = (event: Event) => {
 </script>
 
 <style scoped>
+.prompt-container {
+    position: relative;
+}
+
+.prompt-collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.prompt-expanded {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
