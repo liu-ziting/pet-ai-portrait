@@ -1,15 +1,33 @@
 <template>
     <div class="card p-6 group">
         <!-- Image -->
-        <div class="mb-4">
+        <div class="mb-4 relative cursor-pointer" @click="showImagePreview">
             <img 
                 :src="prompt.imageUrl" 
-                :alt="prompt.title" 
-                class="w-full aspect-square object-contain bg-gray-50 rounded-lg" 
+                :alt="`Pet ${prompt.id}`" 
+                class="w-full aspect-square object-contain bg-gray-50 rounded-lg transition-transform group-hover:scale-105" 
                 loading="lazy" 
                 @error="handleImageError" 
             />
+            <!-- Overlay hint -->
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 rounded-lg flex items-center justify-center">
+                <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <div class="bg-white bg-opacity-90 rounded-full p-3">
+                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Image Preview Modal -->
+        <ImagePreview
+            :visible="showPreview"
+            :image-url="prompt.imageUrl"
+            :title="`Pet ${prompt.id}`"
+            @close="showPreview = false"
+        />
 
         <!-- Content -->
         <div class="space-y-3">
@@ -48,6 +66,7 @@
 import { ref } from 'vue'
 import type { PetPrompt } from '@/types/prompt'
 import { copyToClipboard } from '@/utils/clipboard'
+import ImagePreview from '@/components/common/ImagePreview.vue'
 
 interface Props {
     prompt: PetPrompt
@@ -56,6 +75,11 @@ interface Props {
 const props = defineProps<Props>()
 
 const copied = ref(false)
+const showPreview = ref(false)
+
+const showImagePreview = () => {
+    showPreview.value = true
+}
 
 const copyPrompt = async () => {
     try {

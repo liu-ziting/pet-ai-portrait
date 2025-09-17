@@ -1,38 +1,41 @@
 <template>
-  <footer class="bg-white border-t border-gray-200 mt-16">
+  <footer class="bg-gradient-to-r from-blue-50 to-purple-50 border-t border-gray-200 mt-16">
     <div class="container mx-auto px-4 py-8">
+  
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- About -->
         <div>
           <h3 class="font-semibold text-gray-900 mb-4">关于项目</h3>
           <p class="text-gray-600 text-sm leading-relaxed">
-            精选的 Gemini-2.5-Flash-Image（Nano Banana）生成图像与提示词合集，
-            展示 AI 图像生成的先进能力，为创意表达提供灵感。
+            精选的宠物AI肖像提示词合集，
+            帮助您轻松生成独特的宠物艺术作品，
+            让每个毛孩子都成为艺术品。
           </p>
         </div>
 
         <!-- Links -->
         <div>
-          <h3 class="font-semibold text-gray-900 mb-4">相关链接</h3>
+          <h3 class="font-semibold text-gray-900 mb-4">相关工具</h3>
           <ul class="space-y-2 text-sm">
             <li>
               <a
-                href="https://chatimg.ai"
+                href="https://doubao.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-600 hover:text-primary-600 transition-colors"
               >
-                ChatImg.ai - AI 图像生成工具
+                豆包 - 智能对话助手
               </a>
             </li>
             <li>
               <a
-                href="https://github.com/JimmyLv/awesome-nano-banana"
+                href="https://lmarena.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-gray-600 hover:text-primary-600 transition-colors"
               >
-                GitHub 项目地址
+                LMArena - 模型对比平台
               </a>
             </li>
           </ul>
@@ -42,10 +45,10 @@
         <div>
           <h3 class="font-semibold text-gray-900 mb-4">支持项目</h3>
           <p class="text-gray-600 text-sm mb-4">
-            如果这个项目对你有帮助，请给我们一个 ⭐
+            如果这个宠物AI肖像提示词库对你有帮助，请给我们一个 ⭐
           </p>
           <a
-            href="https://github.com/JimmyLv/awesome-nano-banana"
+            href="https://github.com/liu-ziting/pet-ai-portrait"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center space-x-2 text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
@@ -56,14 +59,6 @@
             <span>Star on GitHub</span>
           </a>
         </div>
-      </div>
-
-      <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-        <p class="text-gray-500 text-sm">
-          © 2025 Nano Banana 提示词导航站. 基于 
-          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="text-primary-600 hover:underline">CC BY 4.0</a> 
-          协议开源
-        </p>
       </div>
     </div>
   </footer>
