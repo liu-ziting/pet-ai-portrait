@@ -7,7 +7,7 @@
                     <span class="text-4xl">🐾</span> Pet AI Portrait
                 </h1>
                 <p class="text-xl text-gray-600 mb-6 leading-relaxed">
-                    精选的宠物AI肖像提示词库
+                    AI宠物写真提示词库
                 </p>
                 <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
                     为你的毛孩子生成专属的艺术肖像，让每个瞬间都成为永恒的艺术品

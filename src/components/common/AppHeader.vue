@@ -7,7 +7,7 @@
           <div class="text-2xl">🐾</div>
           <div>
             <h1 class="text-xl font-bold text-gray-900">Pet AI Portrait</h1>
-            <p class="text-sm text-gray-500">宠物AI肖像提示词库</p>
+            <p class="text-sm text-gray-500">AI宠物写真提示词库</p>
           </div>
         </RouterLink>
 
@@ -49,5 +49,4 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
 </script>
