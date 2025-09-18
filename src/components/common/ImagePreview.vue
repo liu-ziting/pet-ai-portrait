@@ -48,13 +48,6 @@
                     <div class="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                 </div>
             </div>
-
-            <!-- Mobile Instructions -->
-            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:hidden">
-                <div class="bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-medium">
-                    点击任意区域关闭
-                </div>
-            </div>
         </div>
     </Teleport>
 </template>
