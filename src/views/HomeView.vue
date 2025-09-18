@@ -4,17 +4,14 @@
         <section class="text-center py-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl">
             <div class="max-w-4xl mx-auto px-4">
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    <span class="text-4xl">🐾</span> Pet AI Portrait
+                    <span class="text-4xl">🐾</span> AI宠物写真
                 </h1>
-                <p class="text-xl text-gray-600 mb-6 leading-relaxed">
-                    AI宠物写真提示词库
-                </p>
                 <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
                     为你的毛孩子生成专属的艺术肖像，让每个瞬间都成为永恒的艺术品
                 </p>
                 
                 <!-- Quick Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center ">
                     <RouterLink 
                         to="/about" 
                         class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -24,15 +21,6 @@
                         </svg>
                         <span>查看使用指南</span>
                     </RouterLink>
-                    <a 
-                        href="#prompts" 
-                        class="inline-flex items-center space-x-2 px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md"
-                    >
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                        <span>浏览提示词</span>
-                    </a>
                 </div>
             </div>
         </section>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-6 group">
+    <div class="card p-4 md:p-6 group">
         <!-- Image -->
         <div class="mb-4 relative cursor-pointer" @click="showImagePreview">
             <img 
@@ -66,7 +66,7 @@
             <div class="pt-2">
                 <button
                     @click="copyPrompt"
-                    class="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+                    class="w-full flex items-center justify-center space-x-1 md:space-x-2 px-3 md:px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-xs md:text-sm font-medium"
                     :class="{ 'bg-green-600 hover:bg-green-700': copied }"
                 >
                     <svg v-if="!copied" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@
                     <svg v-else class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span>{{ copied ? '已复制!' : '复制提示词' }}</span>
+                    <span class="text-xs md:text-sm">{{ copied ? '已复制!' : '复制提示词' }}</span>
                 </button>
             </div>
         </div>
