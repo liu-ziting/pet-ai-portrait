@@ -39,7 +39,7 @@
                         class="text-gray-600 text-sm transition-all duration-300 leading-relaxed"
                         :class="isExpanded ? 'prompt-expanded' : 'prompt-collapsed'"
                     >
-                        {{ prompt.prompt }}
+                       {{ prompt.prompt }}
                     </p>
                 </div>
                 
