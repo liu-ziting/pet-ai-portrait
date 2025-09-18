@@ -3,7 +3,7 @@
     
 
     <!-- Recommended AI Tools Section -->
-    <section class="py-8 md:py-16 bg-white rounded-2xl">
+    <section class="py-8  bg-white rounded-2xl">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-8 md:mb-12">
           <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">🎆 推荐AI工具</h2>
@@ -28,7 +28,7 @@
                 </div>
               </div>
               
-              <div class="space-y-3 mb-6">
+              <div class="space-y-3 mb-4 md:mb-6">
                 <div class="flex items-center text-gray-700">
                   <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
@@ -105,31 +105,31 @@
         </p>
     
         <!-- Step-by-step Guide -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-          <div class="text-center group">
-            <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12">
+          <div class="text-center group px-2 md:px-0">
+            <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl font-bold mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
               1
             </div>
-            <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">📷 准备宠物照片</h3>
-            <p class="text-sm md:text-base text-gray-600 mb-4">选择一张清晰、光线良好的宠物照片，表情生动的照片效果更佳</p>
+            <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-2 md:mb-3 lg:mb-4">📷 准备宠物照片</h3>
+            <p class="text-xs md:text-sm lg:text-base text-gray-600 mb-2 md:mb-4 leading-relaxed">选择一张清晰、光线良好的宠物照片，表情生动的照片效果更佳</p>
             
           </div>
     
-          <div class="text-center group">
-            <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+          <div class="text-center group px-2 md:px-0">
+            <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl font-bold mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
               2
             </div>
-            <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">🎨 选择提示词</h3>
-            <p class="text-sm md:text-base text-gray-600 mb-4">浏览我们精选的提示词库，选择适合你宠物类型和喜爱风格的提示词</p>
+            <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-2 md:mb-3 lg:mb-4">🎨 选择提示词</h3>
+            <p class="text-xs md:text-sm lg:text-base text-gray-600 mb-2 md:mb-4 leading-relaxed">浏览我们精选的提示词库，选择适合你宠物类型和喜爱风格的提示词</p>
             
           </div>
     
-          <div class="text-center group">
-            <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full flex items-center justify-center text-xl md:text-2xl font-bold mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+          <div class="text-center group px-2 md:px-0 col-span-2 md:col-span-1">
+            <div class="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full flex items-center justify-center text-lg md:text-xl lg:text-2xl font-bold mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-200 shadow-lg">
               3
             </div>
-            <h3 class="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">✨ AI生成写真</h3>
-            <p class="text-sm md:text-base text-gray-600 mb-4">在AI绘画工具中上传照片，粘贴提示词，等待AI生成作品</p>
+            <h3 class="text-sm md:text-base lg:text-lg font-semibold text-gray-900 mb-2 md:mb-3 lg:mb-4">✨ AI生成写真</h3>
+            <p class="text-xs md:text-sm lg:text-base text-gray-600 mb-2 md:mb-4 leading-relaxed">在AI绘画工具中上传照片，粘贴提示词，等待AI生成作品</p>
            
           </div>
         </div>
