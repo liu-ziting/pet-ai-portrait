@@ -210,6 +210,4 @@
 </template>
 
 <script setup lang="ts">
-// 页面元数据
-document.title = '关于我们 - Pet AI Portrait'
 </script>

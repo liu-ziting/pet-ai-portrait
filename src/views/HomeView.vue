@@ -12,8 +12,6 @@
             </div>
         </section>
 
-     
-
         <!-- Prompts Section -->
         <section id="prompts">
             <!-- Simple Divider -->

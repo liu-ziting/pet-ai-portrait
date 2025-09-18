@@ -9,17 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: {
-        title: '首页 - Pet AI Portrait'
-      }
     },
     {
       path: '/about',
       name: 'about',
       component: AboutView,
-      meta: {
-        title: '关于我们 - Pet AI Portrait'
-      }
     },
   ],
 })
