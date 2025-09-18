@@ -23,7 +23,37 @@
 
                 <!-- Image Container -->
                 <div class="w-full h-full flex items-center justify-center">
+                    <!-- 对比模式：主图+右下角小图 -->
+                    <div v-if="enableComparison" class="relative w-full h-full flex items-center justify-center">
+                        <!-- 主图片（AI生成结果） -->
+                        <img 
+                            :src="imageUrl" 
+                            :alt="title || 'AI生成的宠物写真'" 
+                            class="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-fade-in"
+                            @load="handleImageLoad"
+                            @error="handleImageError"
+                        />
+                        
+                        <!-- 右下角原始图片小预览 -->
+                        <div class="absolute bottom-4 right-4 w-20 h-20 sm:w-24 sm:h-24 bg-white/10 backdrop-blur-sm rounded-lg p-1 group hover:scale-110 transition-all duration-300 cursor-pointer">
+                            <img 
+                                :src="originalImageUrl" 
+                                alt="原始宠物照片" 
+                                class="w-full h-full object-cover rounded opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+                                @load="handleOriginalImageLoad"
+                                @error="handleOriginalImageError"
+                            />
+                            <!-- 标签 -->
+                            <div class="absolute -top-2 -left-2 bg-black/50 backdrop-blur-sm text-white px-2 py-0.5 rounded text-xs font-medium">
+                                原图
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- 普通模式：只显示一张图片 -->
                     <img 
+                        v-else
                         :src="imageUrl" 
                         :alt="title || '宠物写真预览'" 
                         class="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-fade-in"
@@ -59,9 +89,14 @@ interface Props {
     visible: boolean
     imageUrl: string
     title?: string
+    enableComparison?: boolean
+    originalImageUrl?: string
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+    enableComparison: false,
+    originalImageUrl: '/images/0.jpg'
+})
 
 const emit = defineEmits<{
     close: []
@@ -82,6 +117,14 @@ const handleImageLoad = () => {
 const handleImageError = () => {
     isLoading.value = false
     console.error('Failed to load image:', props.imageUrl)
+}
+
+const handleOriginalImageLoad = () => {
+    // 原始图片加载成功，可以在这里添加额外逻辑
+}
+
+const handleOriginalImageError = () => {
+    console.error('Failed to load original image:', props.originalImageUrl)
 }
 
 // Close on ESC key

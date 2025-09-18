@@ -26,6 +26,8 @@
             :visible="showPreview"
             :image-url="prompt.imageUrl"
             :title="`Pet ${prompt.id}`"
+            :enable-comparison="true"
+            :original-image-url="'/images/0.jpg'"
             @close="showPreview = false"
         />
 
