@@ -3,10 +3,10 @@
         <!-- Hero Section -->
         <section class="text-center py-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl">
             <div class="max-w-4xl mx-auto px-4">
-                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h1 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
                     <span class="text-4xl">🐾</span> AI宠物写真
                 </h1>
-                <p class="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-md text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
                     为你的毛孩子生成专属的艺术肖像，让每个瞬间都成为永恒的艺术品
                 </p>
                 
