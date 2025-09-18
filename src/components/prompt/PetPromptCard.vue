@@ -89,7 +89,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import type { PetPrompt } from '@/types/prompt'
 import { copyToClipboard } from '@/utils/clipboard'
 import ImagePreview from '@/components/common/ImagePreview.vue'
