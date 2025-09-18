@@ -1,11 +1,10 @@
 <template>
-  <div id="app" class="min-h-screen bg-gray-50">
-    
-    <main class="container mx-auto px-4 py-8">
-      <RouterView />
-    </main>
-    <AppFooter />
-  </div>
+    <div id="app" class="min-h-screen bg-gray-50">
+        <main class="container mx-auto px-4 py-8">
+            <RouterView />
+        </main>
+        <AppFooter />
+    </div>
 </template>
 
 <script setup lang="ts">
