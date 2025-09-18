@@ -1,27 +1,14 @@
 <template>
     <div class="space-y-8">
         <!-- Hero Section -->
-        <section class="text-center py-12 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-2xl">
+        <section class="text-center py-8 bg-gradient-to-r from-violet-50 to-pink-50 rounded-xl border border-violet-100">
             <div class="max-w-4xl mx-auto px-4">
-                <h1 class="text-4xl md:text-4xl font-bold text-gray-900 mb-6">
-                    <span class="text-4xl">🐾</span> AI宠物写真
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                    AI宠物写真提示词
                 </h1>
-                <p class="text-md text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
-                    为你的毛孩子生成专属的艺术肖像，让每个瞬间都成为永恒的艺术品
+                <p class="text-gray-600 mb-4 max-w-2xl mx-auto">
+                    精选高质量AI绘画提示词，一键复制直接使用
                 </p>
-                
-                <!-- Quick Action Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center ">
-                    <RouterLink 
-                        to="/about" 
-                        class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                    >
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                        </svg>
-                        <span>查看使用指南</span>
-                    </RouterLink>
-                </div>
             </div>
         </section>
 
@@ -29,9 +16,14 @@
 
         <!-- Prompts Section -->
         <section id="prompts">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">🎨 精选提示词</h2>
-                <p class="text-gray-600">点击图片查看大图效果，点击按钮复制提示词</p>
+            <!-- Simple Divider -->
+            <div class="flex items-center gap-4 mb-8">
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span class="text-lg">🎯</span>
+                    <span>{{ prompts.length }} 个提示词可供选择</span>
+                </div>
+                <div class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
             </div>
 
             <div v-if="isLoading" class="flex justify-center py-12">

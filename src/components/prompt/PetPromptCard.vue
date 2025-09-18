@@ -35,6 +35,7 @@
             <div class="relative">
                 <div class="prompt-container">
                     <p 
+                        ref="promptRef"
                         class="text-gray-600 text-sm transition-all duration-300 leading-relaxed"
                         :class="isExpanded ? 'prompt-expanded' : 'prompt-collapsed'"
                     >
@@ -42,8 +43,8 @@
                     </p>
                 </div>
                 
-                <!-- Expand/Collapse Button -->
-                <div class="mt-2">
+                <!-- Expand/Collapse Button - 只在需要时显示 -->
+                <div v-if="needsExpansion" class="mt-2">
                     <button
                         @click="toggleExpanded"
                         class="text-primary-600 hover:text-primary-700 text-xs font-medium flex items-center space-x-1 transition-colors hover:bg-primary-50 px-2 py-1 rounded"
@@ -88,7 +89,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, onMounted, nextTick } from 'vue'
 import type { PetPrompt } from '@/types/prompt'
 import { copyToClipboard } from '@/utils/clipboard'
 import ImagePreview from '@/components/common/ImagePreview.vue'
@@ -102,6 +103,23 @@ const props = defineProps<Props>()
 const copied = ref(false)
 const showPreview = ref(false)
 const isExpanded = ref(false)
+const promptRef = ref<HTMLElement>()
+const needsExpansion = ref(false)
+
+// 检查文本是否超过2行
+const checkTextOverflow = async () => {
+    await nextTick()
+    if (promptRef.value) {
+        const element = promptRef.value
+        const lineHeight = parseFloat(getComputedStyle(element).lineHeight)
+        const maxHeight = lineHeight * 2 // 2行的高度
+        needsExpansion.value = element.scrollHeight > maxHeight
+    }
+}
+
+onMounted(() => {
+    checkTextOverflow()
+})
 
 const showImagePreview = () => {
     showPreview.value = true
@@ -156,7 +174,7 @@ const handleImageError = (event: Event) => {
 
 .prompt-collapsed {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
