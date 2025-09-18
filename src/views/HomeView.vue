@@ -13,81 +13,26 @@
                     为你的毛孩子生成专属的艺术肖像，让每个瞬间都成为永恒的艺术品
                 </p>
                 
-                <!-- Collapsible Quick Guide -->
-                <div class="mb-6">
-                    <!-- Collapsible usage guide -->
-                    <div class="text-center">
-                        <button
-                            @click="showGuide = !showGuide"
-                            class="inline-flex items-center justify-center space-x-2 text-gray-600 hover:text-gray-800 text-base font-medium transition-colors bg-white/60 hover:bg-white/80 px-4 py-2 rounded-lg border border-gray-200"
-                        >
-                            <span>📝 {{ showGuide ? '隐藏使用指南' : '查看使用指南' }}</span>
-                            <svg 
-                                class="w-4 h-4 transition-transform duration-200"
-                                :class="{ 'rotate-180': showGuide }"
-                                fill="none" 
-                                stroke="currentColor" 
-                                viewBox="0 0 24 24"
-                            >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        
-                        <!-- Collapsible content -->
-                        <div 
-                            class="overflow-hidden transition-all duration-300"
-                            :class="showGuide ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'"
-                        >
-                            <div class="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-gray-200">
-                                <!-- Upload buttons -->
-                                <div class="mb-6">
-                                    <div class="flex flex-col sm:flex-row gap-3 items-center justify-center">
-                                        <a
-                                            href="https://doubao.com"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                                        >
-                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                                            </svg>
-                                            <span>豆包</span>
-                                        </a>
-                                        <span class="text-gray-500 text-sm sm:text-base font-medium">或</span>
-                                        <a
-                                            href="https://lmarena.ai"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-6 sm:px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
-                                        >
-                                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                                            </svg>
-                                            <span>LMArena</span>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Step guide -->
-                                <div class="border-t border-gray-200 pt-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                                        <div class="flex items-center space-x-3">
-                                            <span class="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-xs font-bold">1</span>
-                                            <span class="text-gray-700">上传宠物照片到豆包/LMArena</span>
-                                        </div>
-                                        <div class="flex items-center space-x-3">
-                                            <span class="w-6 h-6 bg-purple-500 text-white rounded-full flex items-center justify-center text-xs font-bold">2</span>
-                                            <span class="text-gray-700">选择并复制下方提示词</span>
-                                        </div>
-                                        <div class="flex items-center space-x-3">
-                                            <span class="w-6 h-6 bg-pink-500 text-white rounded-full flex items-center justify-center text-xs font-bold">3</span>
-                                            <span class="text-gray-700">生成专属AI写真作品</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Quick Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                    <RouterLink 
+                        to="/about" 
+                        class="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        <span>查看使用指南</span>
+                    </RouterLink>
+                    <a 
+                        href="#prompts" 
+                        class="inline-flex items-center space-x-2 px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg border border-gray-200 transition-all duration-200 shadow-sm hover:shadow-md"
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                        <span>浏览提示词</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -95,7 +40,7 @@
      
 
         <!-- Prompts Section -->
-        <section>
+        <section id="prompts">
             <div class="text-center mb-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">🎨 精选提示词</h2>
                 <p class="text-gray-600">点击图片查看大图效果，点击按钮复制提示词</p>
@@ -122,7 +67,6 @@ import type { PetPrompt } from '@/types/prompt'
 const petPromptsStore = usePetPromptsStore()
 const isLoading = ref(false)
 const prompts = ref<PetPrompt[]>([])
-const showGuide = ref(false)
 
 onMounted(() => {
     prompts.value = petPromptsStore.getAllPrompts()

@@ -28,7 +28,6 @@
                 <!-- Contact -->
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4">支持项目</h3>
-                    <p class="text-gray-600 text-sm mb-4">如果这个AI宠物写真提示词库对你有帮助，请给我们一个 ⭐</p>
                     <a
                         href="https://github.com/liu-ziting/pet-ai-portrait"
                         target="_blank"
