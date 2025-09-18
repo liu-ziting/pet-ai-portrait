@@ -4,7 +4,7 @@ import type { PetPrompt } from '@/types/prompt'
 import { petPrompts } from '@/data/petPrompts'
 
 export const usePetPromptsStore = defineStore('petPrompts', () => {
-    const prompts = ref<PetPrompt[]>(petPrompts)
+    const prompts = ref<PetPrompt[]>([...petPrompts].reverse())
     const isLoading = ref(false)
 
     const getAllPrompts = () => {
