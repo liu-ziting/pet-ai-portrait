@@ -64,7 +64,7 @@
                         @click="toggleExpanded"
                         class="mt-1 text-gray-400 hover:text-primary-500 text-xs transition-colors inline-flex items-center space-x-1"
                     >
-                        <span>...更多</span>
+                        <span>展开</span>
                         <svg 
                             class="w-3 h-3 transition-transform duration-300"
                             fill="none" 
