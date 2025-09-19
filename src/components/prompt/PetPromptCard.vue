@@ -1,22 +1,24 @@
 <template>
-    <div class="card p-4 md:p-6 group">
+    <div class="card p-5  group hover:scale-[1.02] transition-all duration-300 overflow-hidden">
         <!-- Image -->
-        <div class="mb-4 relative cursor-pointer" @click="showImagePreview">
+        <div class="mb-5 relative cursor-pointer overflow-hidden rounded-xl" @click="showImagePreview">
             <img 
                 :src="prompt.imageUrl" 
                 :alt="`Pet ${prompt.id}`" 
-                class="w-full aspect-square object-contain bg-gray-50 rounded-lg transition-transform group-hover:scale-105" 
+                class="w-full aspect-square object-cover bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-500 group-hover:scale-110" 
                 loading="lazy" 
                 @error="handleImageError" 
             />
             <!-- Overlay hint -->
-            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 rounded-lg flex items-center justify-center">
-                <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div class="bg-white bg-opacity-90 rounded-full p-3">
-                        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                <div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                         </svg>
                     </div>
+                    <div class="text-white text-xs font-medium mt-2 text-center">点击预览</div>
                 </div>
             </div>
         </div>
@@ -32,29 +34,39 @@
         />
 
         <!-- Content -->
-        <div class="space-y-3">
+        <div class="space-y-4">
             <!-- Prompt Preview -->
             <div class="relative">
-                <div class="prompt-container">
+                <div class="prompt-container bg-gray-50/50 rounded-lg p-3 border border-gray-100">
                     <p 
                         ref="promptRef"
-                        class="text-gray-600 text-sm transition-all duration-300 leading-relaxed"
+                        class="text-gray-700 text-sm transition-all duration-300 leading-relaxed font-medium"
                         :class="isExpanded ? 'prompt-expanded' : 'prompt-collapsed'"
                     >
-                       {{ prompt.prompt }}
-                    </p>
-                </div>
-                
-                <!-- Expand/Collapse Button - 只在需要时显示 -->
-                <div v-if="needsExpansion" class="mt-2">
-                    <button
+                       <span>{{ prompt.prompt }}</span><button
+                        v-if="needsExpansion && isExpanded"
                         @click="toggleExpanded"
-                        class="text-primary-600 hover:text-primary-700 text-xs font-medium flex items-center space-x-1 transition-colors hover:bg-primary-50 px-2 py-1 rounded"
+                        class="ml-2 text-gray-400 hover:text-primary-500 text-xs transition-colors inline-flex items-center space-x-1"
                     >
-                        <span>{{ isExpanded ? '收起' : '展开全部' }}</span>
+                        <span>收起</span>
                         <svg 
-                            class="w-3 h-3 transition-transform duration-200"
-                            :class="{ 'rotate-180': isExpanded }"
+                            class="w-3 h-3 transition-transform duration-300 rotate-180"
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                        >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    </p>
+                    <button
+                        v-if="needsExpansion && !isExpanded"
+                        @click="toggleExpanded"
+                        class="mt-1 text-gray-400 hover:text-primary-500 text-xs transition-colors inline-flex items-center space-x-1"
+                    >
+                        <span>...更多</span>
+                        <svg 
+                            class="w-3 h-3 transition-transform duration-300"
                             fill="none" 
                             stroke="currentColor" 
                             viewBox="0 0 24 24"
@@ -66,11 +78,14 @@
             </div>
 
             <!-- Copy Button -->
-            <div class="pt-2">
+            <div class="pt-1">
                 <button
                     @click="copyPrompt"
-                    class="w-full flex items-center justify-center space-x-1 md:space-x-2 px-3 md:px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-xs md:text-sm font-medium"
-                    :class="{ 'bg-green-600 hover:bg-green-700': copied }"
+                    class="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-[1.02] shadow-sm hover:shadow-md"
+                    :class="copied 
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white' 
+                        : 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white'
+                    "
                 >
                     <svg v-if="!copied" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
@@ -83,7 +98,7 @@
                     <svg v-else class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    <span class="text-xs md:text-sm">{{ copied ? '已复制!' : '复制提示词' }}</span>
+                    <span>{{ copied ? '已复制!' : '复制提示词' }}</span>
                 </button>
             </div>
         </div>
