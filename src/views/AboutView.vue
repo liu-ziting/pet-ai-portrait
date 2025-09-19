@@ -9,7 +9,7 @@
     </section>
 
     <!-- Combined AI Tools & Guide Section -->
-    <section class="py-8 bg-white border border-gray-200 rounded-2xl shadow-sm mx-4 xl:mx-8">
+    <section class="py-8 bg-white border border-gray-200 rounded-2xl shadow-sm  xl:mx-8">
       <div class="px-6 xl:px-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
           <!-- Left: AI Tools -->
@@ -115,7 +115,7 @@
     </div>
 
     <!-- Other Projects Section -->
-    <section class="py-6 bg-white border border-gray-200 rounded-2xl shadow-sm mx-4 xl:mx-8">
+    <section class="py-6 bg-white border border-gray-200 rounded-2xl shadow-sm xl:mx-8">
       <div class="px-6 xl:px-12">
         <h3 class="text-xl font-bold text-gray-900 mb-6">其他项目</h3>
         

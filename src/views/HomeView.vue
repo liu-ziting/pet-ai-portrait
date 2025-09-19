@@ -7,11 +7,11 @@
                     AI宠物写真提示词
                 </h1>
                 <p class="text-gray-600 mb-6 max-w-2xl mx-auto text-lg leading-relaxed">
-                    精选高质量AI绘画提示词，一键复制直接使用
+                    精选高质量AI宠物写真提示词，一键复制直接使用
                 </p>
                 <div class="flex items-center justify-center space-x-2 text-sm text-gray-500">
                     <div class="w-2 h-2 bg-gradient-to-r from-violet-400 to-pink-400 rounded-full animate-pulse"></div>
-                    <span>智能筛选 • 快速复制 • 高质量内容</span>
+                    <span>高质量提示词 • 快速复制 • 持续更新</span>
                     <div class="w-2 h-2 bg-gradient-to-r from-violet-400 to-pink-400 rounded-full animate-pulse"></div>
                 </div>
             </div>

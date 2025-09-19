@@ -13,7 +13,7 @@
           </div>
           <div class="flex flex-col">
             <h1 class="text-xl font-bold text-gray-900">
-              Pet AI Portrait
+              Pet AI Prompt
             </h1>
             <p class="text-xs text-gray-600 font-medium hidden sm:block">AI宠物写真提示词库</p>
           </div>
