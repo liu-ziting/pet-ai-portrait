@@ -9,13 +9,13 @@
         >
           <div class="relative">
             <div class="text-2xl group-hover:animate-bounce">🐾</div>
-            <div class="absolute -inset-1 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute -inset-1 bg-gray-400/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
           <div class="flex flex-col">
-            <h1 class="text-xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+            <h1 class="text-xl font-bold text-gray-900">
               Pet AI Portrait
             </h1>
-            <p class="text-xs text-gray-500 font-medium hidden sm:block">AI宠物写真提示词库</p>
+            <p class="text-xs text-gray-600 font-medium hidden sm:block">AI宠物写真提示词库</p>
           </div>
         </RouterLink>
 
@@ -134,7 +134,7 @@ const closeMobileMenu = () => {
 }
 
 .nav-link-active {
-  @apply text-primary-600 bg-primary-50 border border-primary-100;
+  @apply text-gray-900 bg-gray-100;
 }
 
 .mobile-nav-link {
@@ -142,6 +142,6 @@ const closeMobileMenu = () => {
 }
 
 .mobile-nav-link-active {
-  @apply text-primary-600 bg-primary-50 border border-primary-100;
+  @apply text-gray-900 bg-gray-100;
 }
 </style>
